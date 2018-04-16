@@ -11,13 +11,18 @@ public class Board extends JPanel implements ActionListener{
     static int[][] arr = new int[700][900];
     static int rows = 700;
     static int col = 900;
+    static int edge1 = 300;
+    static int edgeDist = 50;
 
     public static void setup(){
 
-        for(int i = 0; i < col; i ++){
+        for(int i = 0; i < col; i++){
             for(int j = 0; j < rows; j++){
                 arr[j][i] = 0;
             }
+        }
+        for(int i = 0; i < col-(edge1*2); i++){
+            arr[edgeDist][i] = 1;
         }
 
     }
@@ -36,10 +41,23 @@ public class Board extends JPanel implements ActionListener{
         super.paintComponent(g);
         setBackground(Color.BLACK);
 
+        for(int i = 0; i < col; i++){
+            for(int j = 0; j < rows; j++){
+                if(arr[j][i] == 1){
+                    g.setColor(Color.BLUE);
+                    g.fillRect(j, i, 1, 1);
+                }
+                else if(arr[j][i] == 0){
+                    g.setColor(Color.BLACK);
+                    g.fillRect(j, i, 1, 1);
+                }
+            }
+        }
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        repaint();
     }
 }
