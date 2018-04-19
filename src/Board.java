@@ -15,9 +15,13 @@ public class Board extends JPanel implements ActionListener{
     static int e0 = 50;
     static int e1 = 650;
     static int e2 = 350;
+    static int e3 = 700/4;
+    static int e4 = (700/4)-60;
     static int mid0 = (edge1/2)+60;
     static int mid1 = 450+(edge1/2);
     static int mid2 = mid1+(edge1/3)+60;
+    static int left0 = (900/4)+30;
+    static int left1 = (900/2)+30;
 
     public static void setup(){
 
@@ -45,6 +49,18 @@ public class Board extends JPanel implements ActionListener{
         }
         for(int i = mid2; i < mid2+(edge1/3.0); i++){
             arr[e2][i] = 1;
+        }
+        for(int i = left0; i < (col/2)-60; i++){
+            arr[e3][i] = 1;
+            if(i > edge1) {
+                arr[e4][i] = 1;
+            }
+        }
+        for(int i = left1; i < 2*edge1; i++){
+            arr[e3][i] = 1;
+            if(i > edge1){
+                arr[e4][i] = 1;
+            }
         }
 
     }
