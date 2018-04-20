@@ -95,7 +95,7 @@ public class Board extends JPanel implements ActionListener{
             arr[i][edge1] = 1;
             arr[i][900-edge1] = 1;
         }
-        for(int i = hor0-(edge1/2); i <= 700; i++){
+        for(int i = hor0-60; i <= 700; i++){
             arr[i][(900/2)-60] = 1;
             arr[i][e0] = 1;
         }
