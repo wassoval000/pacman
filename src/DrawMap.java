@@ -87,11 +87,11 @@ public class DrawMap {
             arr[i][edge1] = 1;
             arr[i][col-edge1] = 1;
         }
-        for(int i = rows-115; i <= rows; i++){
+        for(int i = rows+115; i <= rows; i--){
             arr[i][(col/2)-60] = 1;
             arr[i][(col/2)+30] = 1;
         }
-        for(int i = (rows/2)+100; i >= (rows/2)-100; i--){
+        for(int i = (rows/2)+90; i >= (rows/2)-90; i--){
             arr[i][(col/2)+50] = 1;
             arr[i][(col/2)-50] = 1;
             for(int j = (rows/2)+40; j >= (rows/2)-40; j--){
