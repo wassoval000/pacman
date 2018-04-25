@@ -98,9 +98,12 @@ public class DrawMap {
                 arr[j][(col/2)-50] = 0;
             }
         }
+        for(int i = e0+60; i <= e2-100; i++){
+            arr[i][(col/3)-45] = 1;
+        }
         for(int i = e0+60; i <= e3; i++){
             arr[i][60] = 1;
-            arr[i][60*2] = 1;
+            arr[i][150] = 1;
         }
 
     }
