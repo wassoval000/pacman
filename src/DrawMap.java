@@ -101,9 +101,29 @@ public class DrawMap {
         for(int i = e0+60; i <= e2-100; i++){
             arr[i][(col/3)-45] = 1;
         }
+        for(int i = rows-(e0+60); i >= 450; i--){
+            arr[i][(col/3)-45] = 1;
+        }
         for(int i = e0+60; i <= e3; i++){
             arr[i][60] = 1;
             arr[i][150] = 1;
+        }
+        for(int i = rows-(e0+60); i >= 3*(e3); i--){
+            arr[i][60] = 1;
+            arr[i][150] = 1;
+        }
+        for(int i = (rows/2)-100; i <= (rows/2)+100; i++) {
+            arr[i][(col / 2) + 150] = 1;
+            arr[i][col - 140] = 1;
+            arr[i][(col / 4) - 15] = 1;
+        }
+        for(int i = (rows/3)-30; i <= (rows/3)+50; i++){
+            arr[i][(col/8)] = 1;
+            arr[i][col-(col/4)] = 1;
+        }
+        for(int i = (2*(rows/3))+30; i >= (2*(rows/3))-50; i--){
+            arr[i][(col/8)] = 1;
+            arr[i][col-(col/4)] = 1;
         }
 
     }
