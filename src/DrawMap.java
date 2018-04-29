@@ -125,7 +125,7 @@ public class DrawMap {
             arr[i][(col / 8)] = 1;
             arr[i][col - (col / 4)] = 1;
         }
-        for (int i = ((rows / 4) * 3) + 60; i <= rows; i++) {
+        for (int i = ((rows / 4) * 3) + 60; i <= rows-1; i++) {
             arr[i][(col/2)-60] = 1;
             arr[i][(col/2)+30] = 1;
         }
