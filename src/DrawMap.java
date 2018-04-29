@@ -20,112 +20,115 @@ public class DrawMap {
     static int left1 = (900/2)+30;
     static int hor0 = ((700/4)*3)+60;
 
-    public static void draw(){
+    public static void draw() {
 
-        for(int i = 0; i < col; i++){
-            for(int j = 0; j < rows; j++){
+        for (int i = 0; i < col; i++) {
+            for (int j = 0; j < rows; j++) {
                 arr[j][i] = 0;
             }
         }
-        for(int i = 0; i < col-(edge1*2); i++){
+        for (int i = 0; i < col - (edge1 * 2); i++) {
             arr[e0][i] = 1;
             arr[e1][i] = 1;
         }
-        for(int i = (edge1*2); i < col; i++){
+        for (int i = (edge1 * 2); i < col; i++) {
             arr[e0][i] = 1;
             arr[e1][i] = 1;
         }
-        for(int i = 0; i < (edge1/2.0); i++){
+        for (int i = 0; i < (edge1 / 2.0); i++) {
             arr[e2][i] = 1;
         }
-        for(int i = mid0; i < mid0+(edge1/3.0); i++){
+        for (int i = mid0; i < mid0 + (edge1 / 3.0); i++) {
             arr[e2][i] = 1;
         }
-        for(int i = mid1; i < mid1+(edge1/3.0); i++){
+        for (int i = mid1; i < mid1 + (edge1 / 3.0); i++) {
             arr[e2][i] = 1;
         }
-        for(int i = mid2; i < mid2+(edge1/3.0); i++){
+        for (int i = mid2; i < mid2 + (edge1 / 3.0); i++) {
             arr[e2][i] = 1;
         }
-        for(int i = left0; i < (col/2)-60; i++){
+        for (int i = left0; i < (col / 2) - 60; i++) {
             arr[e3][i] = 1;
             arr[e5][i] = 1;
-            if(i > edge1) {
+            if (i > edge1) {
                 arr[e4][i] = 1;
                 arr[e6][i] = 1;
             }
         }
-        for(int i = left1; i < 2*edge1; i++){
+        for (int i = left1; i < 2 * edge1; i++) {
             arr[e3][i] = 1;
             arr[e5][i] = 1;
-            if(i > edge1){
+            if (i > edge1) {
                 arr[e4][i] = 1;
                 arr[e6][i] = 1;
             }
         }
-        for(int i = col-(edge1/2); i < col-60; i++){
+        for (int i = col - (edge1 / 2); i < col - 60; i++) {
             arr[e3][i] = 1;
             arr[e5][i] = 1;
         }
-        for(int i = (col-edge1)+60; i < col-(edge1/2); i++){
+        for (int i = (col - edge1) + 60; i < col - (edge1 / 2); i++) {
             arr[e4][i] = 1;
             arr[e6][i] = 1;
         }
-        for(int i = (col/2)-50; i < (col/2)+50; i++){
+        for (int i = (col / 2) - 50; i < (col / 2) + 50; i++) {
             arr[e7][i] = 1;
             arr[e8][i] = 1;
         }
-        for(int i = e4; i >= 0; i--){
-            arr[i][(col/2)-60] = 1;
-            arr[i][(col/2)+30] = 1;
+        for (int i = e4; i >= 0; i--) {
+            arr[i][(col / 2) - 60] = 1;
+            arr[i][(col / 2) + 30] = 1;
         }
-        for(int i = e4; i >= e0; i--){
+        for (int i = e4; i >= e0; i--) {
             arr[i][edge1] = 1;
-            arr[i][col-edge1] = 1;
+            arr[i][col - edge1] = 1;
         }
-        for(int i = hor0; i <= rows-e0; i++){
+        for (int i = hor0; i <= rows - e0; i++) {
             arr[i][edge1] = 1;
-            arr[i][col-edge1] = 1;
+            arr[i][col - edge1] = 1;
         }
-        for(int i = rows+115; i <= rows; i--){
-            arr[i][(col/2)-60] = 1;
-            arr[i][(col/2)+30] = 1;
+        for (int i = rows + 115; i <= rows; i--) {
+            arr[i][(col / 2) - 60] = 1;
+            arr[i][(col / 2) + 30] = 1;
         }
-        for(int i = (rows/2)+90; i >= (rows/2)-90; i--){
-            arr[i][(col/2)+50] = 1;
-            arr[i][(col/2)-50] = 1;
-            for(int j = (rows/2)+40; j >= (rows/2)-40; j--){
-                arr[j][(col/2)-50] = 0;
+        for (int i = (rows / 2) + 90; i >= (rows / 2) - 90; i--) {
+            arr[i][(col / 2) + 50] = 1;
+            arr[i][(col / 2) - 50] = 1;
+            for (int j = (rows / 2) + 40; j >= (rows / 2) - 40; j--) {
+                arr[j][(col / 2) - 50] = 0;
             }
         }
-        for(int i = e0+60; i <= e2-100; i++){
-            arr[i][(col/3)-45] = 1;
+        for (int i = e0 + 60; i <= e2 - 100; i++) {
+            arr[i][(col / 3) - 45] = 1;
         }
-        for(int i = rows-(e0+60); i >= 450; i--){
-            arr[i][(col/3)-45] = 1;
+        for (int i = rows - (e0 + 60); i >= 450; i--) {
+            arr[i][(col / 3) - 45] = 1;
         }
-        for(int i = e0+60; i <= e3; i++){
+        for (int i = e0 + 60; i <= e3; i++) {
             arr[i][60] = 1;
             arr[i][150] = 1;
         }
-        for(int i = rows-(e0+60); i >= 3*(e3); i--){
+        for (int i = rows - (e0 + 60); i >= 3 * (e3); i--) {
             arr[i][60] = 1;
             arr[i][150] = 1;
         }
-        for(int i = (rows/2)-100; i <= (rows/2)+100; i++) {
+        for (int i = (rows / 2) - 100; i <= (rows / 2) + 100; i++) {
             arr[i][(col / 2) + 150] = 1;
             arr[i][col - 140] = 1;
             arr[i][(col / 4) - 15] = 1;
         }
-        for(int i = (rows/3)-30; i <= (rows/3)+50; i++){
-            arr[i][(col/8)] = 1;
-            arr[i][col-(col/4)] = 1;
+        for (int i = (rows / 3) - 30; i <= (rows / 3) + 50; i++) {
+            arr[i][(col / 8)] = 1;
+            arr[i][col - (col / 4)] = 1;
         }
-        for(int i = (2*(rows/3))+30; i >= (2*(rows/3))-50; i--){
-            arr[i][(col/8)] = 1;
-            arr[i][col-(col/4)] = 1;
+        for (int i = (2 * (rows / 3)) + 30; i >= (2 * (rows / 3)) - 50; i--) {
+            arr[i][(col / 8)] = 1;
+            arr[i][col - (col / 4)] = 1;
         }
-
+        for (int i = ((rows / 4) * 3) + 60; i <= rows; i++) {
+            arr[i][(col/2)-60] = 1;
+            arr[i][(col/2)+30] = 1;
+        }
     }
 
 }
