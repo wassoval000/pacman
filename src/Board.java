@@ -8,10 +8,19 @@ import java.util.List;
 public class Board extends JPanel implements ActionListener{
 
     static Timer timer;
+    static List<Sprite> sprites = new ArrayList<>();
 
     public static void setup(){
 
         DrawMap.draw();
+        Pac.tilePac();
+        for(int i = 0; i < 700; i ++){
+            for(int j = 0; j < 900; j++){
+                if(Pac.pacArr[i][j]==1){
+                    sprites.add(new Pac(Color.PINK, i, j, 5));
+                }
+            }
+        }
 
     }
 
@@ -40,6 +49,10 @@ public class Board extends JPanel implements ActionListener{
                     g.fillRect(j, i, 1, 1);
                 }
             }
+        }
+
+        for(int i = 0; i < sprites.size(); i++){
+            sprites.get(i).paint(g);
         }
 
     }
