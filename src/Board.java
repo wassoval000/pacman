@@ -9,15 +9,19 @@ public class Board extends JPanel implements ActionListener{
 
     static Timer timer;
     static List<Sprite> sprites = new ArrayList<>();
+    static int x;
+    static int y;
 
     public static void setup(){
 
         DrawMap.draw();
-        Pac.tilePac();
-        for(int i = 0; i < 700; i ++){
-            for(int j = 0; j < 900; j++){
-                if(Pac.pacArr[i][j]==1){
-                    sprites.add(new Pac(Color.PINK, i, j, 5));
+
+        for(int i = 0; i < DrawMap.col; i++){
+            for(int j = 0; j < DrawMap.rows; j++){
+                if(DrawMap.pacArr[j][i] == 1){
+                    x = DrawMap.pac0;
+                    y = DrawMap.pacArr[j][i];
+                    sprites.add(new Pac(Color.PINK,x,y,25));
                 }
             }
         }
@@ -54,6 +58,8 @@ public class Board extends JPanel implements ActionListener{
         for(int i = 0; i < sprites.size(); i++){
             sprites.get(i).paint(g);
         }
+
+        System.out.println(sprites.size());
 
     }
 
