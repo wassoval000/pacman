@@ -18,13 +18,29 @@ public class Board extends JPanel implements ActionListener{
 
         for(int i = 0; i < DrawMap.col; i++){
             for(int j = 0; j < DrawMap.rows; j++){
-                if(DrawMap.pacArr[j][i] == 1){
-                    x = DrawMap.pac0;
-                    y = DrawMap.pacArr[j][i];
-                    sprites.add(new Pac(Color.PINK,x,y,25));
+                if(DrawMap.arr[j][i] == 0){
+                    x = j;
+                    y = i;
+                    if(i%50==0 && j%50==0) {
+                        if(x>105&&x<DrawMap.rows-105){
+                            sprites.add(new Pac(Color.PINK, x, y, 10));
+                        }
+                    }
                 }
             }
         }
+        sprites.add(new Pac(Color.PINK, 95, 10, 18));
+        sprites.add(new Pac(Color.PINK, 95, 100, 18));
+        sprites.add(new Pac(Color.PINK, 95, 200, 18));
+        sprites.add(new Pac(Color.PINK, DrawMap.rows-95, 10, 18));
+        sprites.add(new Pac(Color.PINK, DrawMap.rows-95, 100, 18));
+        sprites.add(new Pac(Color.PINK, DrawMap.rows-95, 200, 18));
+        sprites.add(new Pac(Color.PINK, 95, DrawMap.col-50, 18));
+        sprites.add(new Pac(Color.PINK, 95, DrawMap.col-140, 18));
+        sprites.add(new Pac(Color.PINK, 95, DrawMap.col-240, 18));
+        sprites.add(new Pac(Color.PINK, DrawMap.rows-95, DrawMap.col-50, 18));
+        sprites.add(new Pac(Color.PINK, DrawMap.rows-95, DrawMap.col-140, 18));
+        sprites.add(new Pac(Color.PINK, DrawMap.rows-95, DrawMap.col-240, 18));
 
     }
 
