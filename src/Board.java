@@ -23,7 +23,7 @@ public class Board extends JPanel implements ActionListener{
                     y = i;
                     if(i%50==0 && j%50==0) {
                         if(x>105&&x<DrawMap.rows-105){
-                            sprites.add(new Pac(Color.PINK, x, y, 10));
+                            sprites.add(new Pac(Color.white, x, y, 50));
                         }
                     }
                 }
