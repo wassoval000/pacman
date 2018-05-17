@@ -20,11 +20,6 @@ public class DrawMap {
     static int left1 = (900/2)+30;
     static int hor0 = ((700/4)*3)+60;
 
-    static int[][] pacArr = new int[700][900];
-    static int pac0 = (700/4)-30;
-    static int pac1 = (900/3)-35;
-    static int pac2 = 900-10;
-
     public static void draw() {
 
         for (int i = 0; i < col; i++) {
@@ -133,19 +128,6 @@ public class DrawMap {
         for (int i = ((rows / 4) * 3) + 60; i <= rows-1; i++) {
             arr[i][(col/2)-60] = 1;
             arr[i][(col/2)+30] = 1;
-        }
-
-        ///////////////////////////////////////////
-
-        for(int i = 0; i < rows; i++){
-            for(int j = 0; j < col; j++){
-                pacArr[i][j] = 0;
-            }
-        }
-        for(int i = pac1; i <= pac2; i++){
-
-            pacArr[pac0][i] = 1;
-
         }
     }
 
